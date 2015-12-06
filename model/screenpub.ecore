@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Screenpub" nsURI="www.globoard.com/screenpub" nsPrefix="scrp">
+  <eClassifiers xsi:type="ecore:EClass" name="Rootsystem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="broadcasters" upperBound="-1"
+        eType="#//Broadcaster" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clients" upperBound="-1"
+        eType="#//Client" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Broadcaster">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="domain" lowerBound="1"
+        upperBound="-1" eType="#//DomainType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="localization" lowerBound="1"
+        eType="#//LocalizationType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primetimes" upperBound="-1"
+        eType="#//PrimetimeType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="broadcastingduration" lowerBound="1"
+        upperBound="-1" eType="#//DurationType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Client">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="domain" lowerBound="1"
+        upperBound="-1" eType="#//DomainType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DomainType">
+    <eLiterals name="opticien"/>
+    <eLiterals name="boulanger"/>
+    <eLiterals name="dentiste"/>
+    <eLiterals name="pharmacien"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LocalizationType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="adress" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postcode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="commune" eType="#//communeType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" lowerBound="1" eType="#//cityType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="department" eType="#//departmentType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="region" eType="#//regionType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" lowerBound="1"
+        eType="#//countryType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="communeType"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="cityType"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="departmentType"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="regionType"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="countryType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimetimeType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DurationType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+</ecore:EPackage>
